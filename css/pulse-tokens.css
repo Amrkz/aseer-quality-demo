@@ -1,0 +1,311 @@
+/* pulse-tokens.css — shared Pulse portal design tokens (phase 1: zero visual change) */
+:root {
+  /* @generated:tokens:start — from design/tokens.json; run `npm run tokens:build` */
+  /* --- palette --- */
+  --paper:         #F1F5F8;
+  --surface:       #FFFFFF;
+  --surface-2:     #F1F6FA;
+  --line:          #E4EBF0;
+  --line-soft:     #EEF3F6;
+  --ink:           #0C1B2A;
+  --muted:         #65788C;
+  --faint:         #93A2B3;
+  --brand-2:       #2FA9E0;
+  --on-brand:      #FFFFFF;
+  --brand-deep:    #0D1F42;
+  --nav-bg:        rgba(255,255,255,0.92);
+  --border:        #E4EBF0;
+  /* --- coverage tiers (call = red, duty = green; never colour alone) --- */
+  --tier-call1:    #C41E3A;
+  --tier-call2:    #1668A0;
+  --tier-backup:   #6B3FB5;
+  --tier-duty:     #1B7F45;
+  --tier-gap:      #64748B;
+  --on-tier:       #FFFFFF;
+  /* --- weekend ink (Fri/Sat, KSA) --- */
+  --wknd-ink:      #8A6A2F;
+  --wknd-ink-sat:  #3D5F9A;
+  /* --- radius: one scale, from the app --- */
+  --radius-hair:   2px;
+  --radius-micro:  4px;
+  --radius-tight:  6px;
+  --radius-chip:   10px;
+  --radius-xs:     12px;
+  --radius-sm:     14px;
+  --radius-md:     18px;
+  --radius-lg:     20px;
+  --radius-xl:     22px;
+  --radius-pill:   999px;
+  /* legacy portal names, pointed at the nearest app step */
+  --r-xs:          var(--radius-chip);
+  --r-sm:          var(--radius-xs);
+  --r-md:          var(--radius-sm);
+  --r-lg:          var(--radius-xl);
+  --r-pill:        var(--radius-pill);
+  --card-r:        var(--radius-md);
+  --r-hair:        var(--radius-hair);
+  --r-micro:       var(--radius-micro);
+  --r-tight:       var(--radius-tight);
+  /* --- spacing scale (additive; from the app) --- */
+  --space-xs:      4px;
+  --space-sm:      8px;
+  --space-md:      12px;
+  --space-lg:      16px;
+  --space-xl:      20px;
+  --space-xxl:     24px;
+  /* --- type scale in px (additive; from the app) --- */
+  --fs-h1:         27px;
+  --fs-h1Alt:      26px;
+  --fs-h1Focus:    24px;
+  --fs-heroHeadline: 23px;
+  --fs-h2:         19px;
+  --fs-statValue:  34px;
+  --fs-statValueSm: 28px;
+  --fs-statCircle: 26px;
+  --fs-body:       15px;
+  --fs-bodySm:     14.5px;
+  --fs-label:      13.5px;
+  --fs-caption:    13px;
+  --fs-captionSm:  12.5px;
+  --fs-micro:      12px;
+  --fs-microSm:    11.5px;
+  --fs-eyebrow:    11px;
+  --fs-tiny:       10.5px;
+  --fs-tinyBold:   10px;
+  --fs-nano:       9px;
+  /* @generated:tokens:end */
+
+  --paper-2:    #E6EBF2;
+  --ink-2:      #34465A;
+  --brand:      #13508A;
+  --brand-text: #0D1F42; /* text-on-surface brand; dark theme uses lighter accent */
+  --brand-soft: rgba(47,169,224,0.10);
+  --brand-line: rgba(47,169,224,0.25);
+  /* aliases used by People / accounts screens */
+  --ok:         #1B7F45;
+  --ok-bg:      #E2F3E8;
+  --ok-line:    rgba(27,127,69,0.28);
+  --rail:       #0D1F42;
+  --rail-2:     #162D52;
+  --rail-line:  rgba(255,255,255,0.08);
+  --rail-ink:   #E7EEF2;
+  --rail-muted: #7C93A2;
+  --call:       #C41E3A;
+  --call-bright:#FF2D46;
+  --call-deep:  #8B0E1F;
+  --call-bg:    #FFF0F2;
+  --call-line:  rgba(196,30,58,0.32);
+  --call-shine: rgba(255,255,255,0.42);
+  --call-shadow:rgba(107,10,24,0.38);
+  --duty:       #1B7F45;
+  --duty-bg:    #E2F3E8;
+  --duty-line:  rgba(27,127,69,0.28);
+  --off:        #64748B;
+  --off-bg:     #EDF0F4;
+  --crit:       #C01D3C;
+  --crit-bg:    #FBE7EB;
+  --crit-line:  rgba(192,29,60,0.28);
+  --warn:       #92600A;
+  --warn-bg:    #FEF3C7;
+  --warn-line:  rgba(146,96,10,0.28);
+  /* MoH QFR Failing (orange) — distinct from Failed/crit red and Distress/warn amber */
+  --failing:       #C2410C;
+  --failing-bg:    #FFF7ED;
+  --failing-line:  rgba(194,65,12,0.32);
+  --info:       #1D4ED8;
+  --info-bg:    #EFF6FF;
+  --info-line:  rgba(29,78,216,0.25);
+  --ward:       #047857;
+  --ward-bg:    #ECFDF5;
+  --ward-line:  rgba(4,120,87,0.25);
+  --opd:        #7E22CE;
+  --opd-bg:     #FAF5FF;
+  --opd-line:   rgba(126,34,206,0.25);
+  --resident:   #1F6FE0;
+  --resident-bg:rgba(31,111,224,0.12);
+  --specialist: #13508A;
+  --specialist-bg:rgba(19,80,138,0.12);
+  --consultant: #7A3FC4;
+  --consultant-bg:rgba(122,63,196,0.12);
+  /* ---- Canonical coverage tier scale (single source of truth) ----
+     One meaning, one hue, used by BOTH the portal grid and the mobile app
+     (mirrored in mobile/src/theme/tokens.ts `statusColors`).
+     CALL IS RED, DUTY IS GREEN — the same contract --call / --duty above
+     already declare. The roster grid previously inverted this (1st call
+     green, duty burgundy) and shipped two different reds; that is fixed.
+     Tier hue is NEVER the only channel: every dot also carries a glyph
+     (1 / 2 / B / D), so red-green colour vision deficiency cannot misread
+     on-call as on-duty. --on-tier is the ink that sits ON these fills. */
+  --tier-call1-bg:  rgba(196,30,58,0.12);
+  --tier-call2-bg:  rgba(22,104,160,0.12);
+  --tier-backup-bg: rgba(107,63,181,0.11);
+  --tier-duty-bg:   rgba(27,127,69,0.11);
+  --tier-gap-bg:    var(--surface-2);
+  /* Weekend column tint — deliberately NEUTRAL. It used to reuse the duty
+     green, which put a semantic tier colour behind every Fri/Sat cell. */
+  --wknd-tint:      rgba(12,27,42,0.045);
+  --wknd-tint-2:    rgba(12,27,42,0.075);
+  --wknd-tint-3:    rgba(12,27,42,0.105);
+  --sh-1: 0 1px 2px rgba(12,27,42,0.05), 0 2px 6px rgba(12,27,42,0.04);
+  --sh-2: 0 4px 14px rgba(12,27,42,0.07), 0 1px 3px rgba(12,27,42,0.05);
+  --sh-3: 0 18px 44px rgba(12,27,42,0.14), 0 4px 12px rgba(12,27,42,0.08);
+  --scrim: rgba(4,9,26,0.56);
+  /* Ink that sits ON a --ink fill (the week strip's "today" cell, and any other
+     inverted surface). --ink flips from near-black to near-white with the theme,
+     so everything painted on it has to flip too — the hard-coded #fff these
+     replaced disappeared against the dark theme's near-white --ink. */
+  --on-ink:       #FFFFFF;
+  --on-ink-soft:  rgba(255,255,255,0.72);
+  --on-ink-veil:  rgba(255,255,255,0.18);
+  --on-ink-call:  #FFC8D0;
+  --on-ink-duty:  #B7F0CE;
+  /* Aseer brand typeface (guide 6.1): Janna LT for Arabic and English, supplied
+     by the cluster (assets/fonts/Janna-LT-*.ttf, 400 + 700). Hanken stays as the
+     Latin fallback only. */
+  --display: 'Janna LT', 'Hanken Grotesk', 'Space Grotesk', system-ui, sans-serif;
+  --text:    'Janna LT', 'Hanken Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+  /* Aseer secondary palette (guide 3.2) - charts and accents only; never for call/duty/defect semantics */
+  --brand-sec-1: #283A83;
+  --brand-sec-2: #057590;
+  --brand-sec-3: #1194D2;
+  --brand-sec-4: #3AC0C3;
+  --brand-sec-5: #48AD48;
+  --brand-sec-6: #9ECC3B;
+  --brand-primary-1: #2FA0E0;
+  --brand-primary-2: #1691D0;
+  --brand-bg: #15508A;
+  --rail-w: 252px;
+  --rail-w-collapsed: 72px;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --topbar-h: 52px;
+  --mobilenav-h: 78px;   /* app tab bar height (mobile/app/(tabs)/_layout.tsx) */
+  --r-toolbar-h: 52px;
+  /* B5 layout tokens */
+  --content-max: 1240px;
+  --page-pad: clamp(.9rem, 2vw, 1.6rem);
+  --card-pad: clamp(.75rem, 1.5vw, 1rem);
+  --cell-pad: .65rem .85rem;
+
+  /* 2026 polish — calm motion + soft elevation (import overlay language) */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --dur-fast: 140ms;
+  --dur-med: 280ms;
+  --dur-slow: 480ms;
+  --glow-brand: color-mix(in srgb, var(--brand-2) 18%, transparent);
+  --glass: color-mix(in srgb, var(--paper) 72%, transparent);
+  --glass-surface: color-mix(in srgb, var(--surface) 96%, #fff);
+  --overlay-blur: 10px;
+  --card-shadow-soft:
+    0 1px 0 color-mix(in srgb, #fff 70%, transparent) inset,
+    0 18px 48px rgba(12, 27, 42, 0.12),
+    0 4px 14px rgba(19, 80, 138, 0.08);
+}
+
+/* Dark theme — opt-in via [data-theme="dark"] on <html> (set by the rail theme toggle).
+   Light stays the default everywhere; this block only applies once a user switches.
+   Surfaces/ink/lines/shadows are derived from the legacy /web app's proven dark palette
+   (web/app.css [data-theme="dark"]) so /web and /portal read as one dark theme.
+   Brand identity, rank, and status hues keep the same family as light, brightened only
+   enough to stay legible on near-black surfaces (WCAG contrast) — the rail/sidebar is
+   intentionally always-dark and unaffected by this block. */
+:root[data-theme="dark"] {
+  /* @generated:tokens:start — from design/tokens.json; run `npm run tokens:build` */
+  /* --- palette --- */
+  --paper:         #04091A;
+  --surface:       #16232F;
+  --surface-2:     #1E2E3C;
+  --line:          #28394A;
+  --line-soft:     #22323F;
+  --ink:           #EAF2F8;
+  --muted:         #8AA0B2;
+  --faint:         #5D7488;
+  --brand-2:       #4FB3E8;
+  --on-brand:      #F7FBFE;
+  --brand-deep:    #0D1F42;
+  --nav-bg:        rgba(16,26,38,0.94);
+  --border:        #28394A;
+  /* --- coverage tiers (call = red, duty = green; never colour alone) --- */
+  --tier-call1:    #FF2D46;
+  --tier-call2:    #35B4F0;
+  --tier-backup:   #A78BFA;
+  --tier-duty:     #4ADE80;
+  --tier-gap:      #94A7BD;
+  --on-tier:       #06121F;
+  /* --- weekend ink (Fri/Sat, KSA) --- */
+  --wknd-ink:      #E0B75F;
+  --wknd-ink-sat:  #8FB3E8;
+  /* @generated:tokens:end */
+
+  --paper-2:    #07112B;
+  --ink-2:      #C7DCF0;
+  --brand:      #2FA9E0;
+  --brand-text: #5EC9ED;
+  --brand-soft: rgba(47,169,224,0.14);
+  --brand-line: rgba(47,169,224,0.30);
+  --ok:         #4ADE80;
+  --ok-bg:      rgba(74,222,128,0.14);
+  --ok-line:    rgba(74,222,128,0.30);
+  --call:       #FF2D46;
+  --call-bright:#FF6B7A;
+  --call-deep:  #8B0E1F;
+  --call-bg:    rgba(196,30,58,0.18);
+  --call-line:  rgba(255,45,70,0.35);
+  --call-shine: rgba(255,255,255,0.18);
+  --call-shadow:rgba(0,0,0,0.5);
+  --duty:       #4ADE80;
+  --duty-bg:    rgba(74,222,128,0.14);
+  --duty-line:  rgba(74,222,128,0.30);
+  --off:        #94A7BD;
+  --off-bg:     rgba(148,167,189,0.12);
+  --crit:       #F87171;
+  --crit-bg:    rgba(248,113,113,0.14);
+  --crit-line:  rgba(248,113,113,0.30);
+  --warn:       #FBBF24;
+  --warn-bg:    rgba(251,191,36,0.14);
+  --warn-line:  rgba(251,191,36,0.30);
+  --failing:       #FB923C;
+  --failing-bg:    rgba(251,146,60,0.14);
+  --failing-line:  rgba(251,146,60,0.30);
+  --info:       #60A5FA;
+  --info-bg:    rgba(96,165,250,0.14);
+  --info-line:  rgba(96,165,250,0.30);
+  --ward:       #34D399;
+  --ward-bg:    rgba(52,211,153,0.14);
+  --ward-line:  rgba(52,211,153,0.30);
+  --opd:        #C084FC;
+  --opd-bg:     rgba(192,132,252,0.14);
+  --opd-line:   rgba(192,132,252,0.30);
+  --resident:   #5B9DFF;
+  --resident-bg:rgba(91,157,255,0.14);
+  --specialist: #38BDF8;
+  --specialist-bg:rgba(56,189,248,0.14);
+  --consultant: #B794F6;
+  --consultant-bg:rgba(183,148,246,0.14);
+  /* Coverage tiers on near-black: brighten the fill and flip the ink dark,
+     so the glyph keeps >=4.5:1 against its own badge in both themes. */
+  --tier-call1-bg:  rgba(255,45,70,0.16);
+  --tier-call2-bg:  rgba(53,180,240,0.15);
+  --tier-backup-bg: rgba(167,139,250,0.15);
+  --tier-duty-bg:   rgba(74,222,128,0.14);
+  --tier-gap-bg:    rgba(148,167,189,0.10);
+  --wknd-tint:      rgba(255,255,255,0.035);
+  --wknd-tint-2:    rgba(255,255,255,0.06);
+  --wknd-tint-3:    rgba(255,255,255,0.09);
+  --sh-1: 0 1px 2px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.25);
+  --sh-2: 0 4px 14px rgba(0,0,0,0.45), 0 1px 3px rgba(47,169,224,0.08);
+  --sh-3: 0 18px 44px rgba(0,0,0,0.55), 0 4px 12px rgba(47,169,224,0.12);
+  --scrim: rgba(0,0,0,0.68);
+  /* --ink is near-white here, so the ink on top of it goes dark. */
+  --on-ink:       #04091A;
+  --on-ink-soft:  rgba(4,9,26,0.72);
+  --on-ink-veil:  rgba(4,9,26,0.10);
+  --on-ink-call:  #8B0E1F;
+  --on-ink-duty:  #14532D;
+  --glow-brand: color-mix(in srgb, var(--brand-2) 16%, transparent);
+  --glass: color-mix(in srgb, var(--paper) 78%, transparent);
+  --glass-surface: color-mix(in srgb, var(--surface) 96%, #1a2a3d);
+  --card-shadow-soft:
+    0 1px 0 color-mix(in srgb, #fff 6%, transparent) inset,
+    0 18px 48px rgba(0, 0, 0, 0.35);
+}

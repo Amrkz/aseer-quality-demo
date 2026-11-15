@@ -1,0 +1,22 @@
+/* Aseer Quality (Demo) chrome. Copyright (c) 2026 Dr Amr Qazzaz. All rights reserved. */
+:root { --demo-banner-h: 34px; --demo-footer-h: 30px; }
+#aq-demo-banner { position: sticky; top: 0; z-index: 100; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.25rem 1.25rem; padding: 0.4rem 0.75rem; background: #fff4d6; color: #5a3b00; border-bottom: 2px solid #e0a800; font: 600 0.82rem/1.35 system-ui, sans-serif; text-align: center; }
+#aq-demo-banner strong { background: #e0a800; color: #241600; padding: 0 0.4rem; border-radius: 4px; margin-inline-end: 0.3rem; }
+.aq-top { top: var(--demo-banner-h) !important; }
+.aq-body { min-height: calc(100vh - 62px - var(--demo-banner-h) - var(--demo-footer-h)); }
+.aq-auth, .aq-center { min-height: calc(100vh - var(--demo-banner-h) - var(--demo-footer-h)); }
+@media (max-width: 900px) { .aq-nav { top: calc(62px + var(--demo-banner-h)) !important; bottom: var(--demo-footer-h) !important; } }
+body { padding-bottom: var(--demo-footer-h); }
+#aq-demo-footer { position: fixed; inset-inline: 0; bottom: 0; z-index: 100; min-height: var(--demo-footer-h); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.2rem 0.5rem; padding: 0.25rem 0.75rem; background: #0f2a44; color: #fff; font: 500 0.78rem/1.3 system-ui, sans-serif; }
+#aq-demo-footer .sep { opacity: 0.5; }
+.aq-demo-reset { background: none; border: 1px solid rgba(255,255,255,0.5); color: #fff; border-radius: 4px; padding: 0.1rem 0.5rem; font: inherit; cursor: pointer; }
+.aq-demo-reset:focus-visible { outline: 2px solid #ffd166; outline-offset: 2px; }
+.aq-toasts { bottom: calc(var(--demo-footer-h) + 1rem) !important; }
+#aq-demo-accounts { position: fixed; inset-inline-start: 1rem; bottom: calc(var(--demo-footer-h) + 1rem); z-index: 95; width: 21rem; max-width: calc(100vw - 2rem); background: #fff; color: #10263d; border: 2px solid #e0a800; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 0.75rem 0.9rem; font: 0.85rem/1.4 system-ui, sans-serif; }
+#aq-demo-accounts h2 { margin: 0 0 0.25rem; font-size: 0.95rem; }
+#aq-demo-accounts p { margin: 0 0 0.5rem; }
+#aq-demo-accounts ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.3rem; }
+#aq-demo-accounts li button { width: 100%; min-height: 40px; display: flex; gap: 0.6rem; align-items: center; text-align: start; background: #f4f7fb; border: 1px solid #cfd9e3; border-radius: 8px; padding: 0.3rem 0.6rem; cursor: pointer; font: inherit; color: inherit; }
+#aq-demo-accounts li button:hover { background: #e8f0f9; }
+#aq-demo-accounts code { font-weight: 700; color: #15508a; }
+@media (max-width: 760px) { #aq-demo-accounts { position: static; width: auto; max-width: none; margin: 0.75rem; box-shadow: none; } }
